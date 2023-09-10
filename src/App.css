@@ -57,10 +57,12 @@ main {
       border: 1px solid var(--orange-peel);
     }
 
-    .input-form > input[type="submit"]
+    .input-form > button
     {
       grid-column-start: 1;
       grid-column-end: span 2;
+
+      height: 40px;
 
       background-color: var(--french-violet);
       color: white;
@@ -70,12 +72,12 @@ main {
       font-size: 16px;
     }
 
-    .input-form > input[type="submit"]:hover {
+    .input-form > button:hover {
       background-color: var(--amethyst);
       color: var(--orange-peel);
     }
 
-    .input-form > input[type="submit"]:active {
+    .input-form > button:active {
       background-color: var(--orange-peel);
       color: var(--amethyst);
     }
