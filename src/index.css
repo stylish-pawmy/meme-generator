@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Nunito', sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -26,6 +26,12 @@
   --amethyst: #9d4eddff;
 }
 
+#root {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
 a {
   font-weight: 500;
   color: var(--ut-orange);
@@ -35,12 +41,23 @@ a:hover {
   color: var(--orange-peel);
 }
 
-body {
+body, html {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  left: 0;
+  position: absolute;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Fredoka', sans-serif;
 }
 
 h1 {
