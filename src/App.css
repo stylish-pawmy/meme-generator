@@ -81,3 +81,16 @@ main {
       background-color: var(--orange-peel);
       color: var(--amethyst);
     }
+
+.meme-frame {
+  grid-column-start: 1;
+  grid-column-end: span 2;
+  object-fit: cover;
+  padding: 0;
+  margin-top: 21px;
+}
+
+.meme-frame > img {
+  max-width: 500px;
+  border-radius: 2px;
+}

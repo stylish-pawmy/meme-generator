@@ -8,7 +8,6 @@ export default function MemeFrame(props)
         >
             <img
                 title={props.item.name}
-                height={props.item.height}
                 src={props.item.url} />
         </div>
     )
