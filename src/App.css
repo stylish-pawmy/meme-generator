@@ -26,3 +26,56 @@ header {
           font-weight: 500;
         }
   
+main {
+  max-width: 800px;
+
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.input-form {
+  width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 15px;
+}
+
+    .input-form > input {
+      border-radius: 5px;
+      height: 35px;
+
+      border: 1px solid #D5D4D8;
+      padding: 0 10px;
+    }
+
+    .input-form > input[type="text"]:focus {
+      border: 1px solid var(--orange-peel);
+    }
+
+    .input-form > input[type="submit"]
+    {
+      grid-column-start: 1;
+      grid-column-end: span 2;
+
+      background-color: var(--french-violet);
+      color: white;
+      
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .input-form > input[type="submit"]:hover {
+      background-color: var(--amethyst);
+      color: var(--orange-peel);
+    }
+
+    .input-form > input[type="submit"]:active {
+      background-color: var(--orange-peel);
+      color: var(--amethyst);
+    }
