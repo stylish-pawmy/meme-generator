@@ -7,8 +7,7 @@ export default function MemeFrame(props)
             className="meme-frame"
         >
             <img
-                title={props.item.name}
-                src={props.item.url} />
+                src={props.item.randomImage} />
         </div>
     )
 }

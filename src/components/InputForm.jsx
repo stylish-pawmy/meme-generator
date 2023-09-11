@@ -5,16 +5,24 @@ import { useState } from "react";
 
 export default function InputForm()
 {
-    const memesArray = MemesData['data']['memes'];
-    const [meme, setMeme] = useState(memesArray[
-        Math.floor(Math.random() * memesArray.length)
-    ]);
+    const [allMemeImages, setAllMemeImages] = useState(MemesData);
+
+    const [meme, setMeme] = useState(
+        {
+            topText: "",
+            bottomText: "",
+            randomImage: "http://i.imgflip.com/1bij.jpg"
+        }
+    );
 
     function getRandomMeme()
     {
-        setMeme(memesArray[
-            Math.floor(Math.random() * memesArray.length)
-        ]);
+        setMeme(
+            {
+                ...meme,
+                randomImage: allMemeImages.data.memes[Math.floor(Math.random() * allMemeImages.data.memes.length)]["url"]
+            }
+        );
     }
 
     return (
