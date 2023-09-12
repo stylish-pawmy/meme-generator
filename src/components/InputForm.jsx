@@ -1,11 +1,16 @@
 import "../App.css";
 import { default as MemeFrame } from "./MemeFrame.jsx";
-import { default as MemesData } from "../data/memesData.js";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function InputForm()
 {
-    const [allMemeImages, setAllMemeImages] = useState(MemesData);
+    const [allMemes, setAllMemes] = useState([]);
+
+    useEffect(() => {
+        fetch("https://api.imgflip.com/get_memes")
+        .then(res => res.json())
+        .then(chunk => setAllMemes(chunk.data.memes))
+    }, [])
 
     const [meme, setMeme] = useState(
         {
@@ -20,7 +25,7 @@ export default function InputForm()
         setMeme(
             {
                 ...meme,
-                randomImage: allMemeImages.data.memes[Math.floor(Math.random() * allMemeImages.data.memes.length)]["url"]
+                randomImage: allMemes[Math.floor(Math.random() * allMemes.length)]["url"]
             }
         );
     }
