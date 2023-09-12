@@ -25,11 +25,40 @@ export default function InputForm()
         );
     }
 
+    function handleFormChange(event)
+    {
+        const {name, value} = event.target;
+
+        setMeme(prevMeme => {
+            return {
+                ...prevMeme,
+                [name]: value
+            }
+        })
+    }
+
     return (
         <div className="input-form">
-            <input type="text" placeholder="Top Text"/>
-            <input type="text" placeholder="Bottom Text"/>
-            <button className="input-form--submit" onClick={getRandomMeme}>Get a new meme image 🖼️</button>
+            <input
+                type="text"
+                placeholder="Top Text"
+                name="topText"
+                value={meme.topText}
+                onChange={handleFormChange}
+            />
+            <input
+                type="text"
+                placeholder="Bottom Text"
+                name="bottomText"
+                value={meme.bottomText}
+                onChange={handleFormChange}
+            />
+            <button
+                className="input-form--submit"
+                onClick={getRandomMeme}
+                type="button"
+            >Get a new meme image 🖼️</button>
+
             <MemeFrame
                 item={meme}
             />
