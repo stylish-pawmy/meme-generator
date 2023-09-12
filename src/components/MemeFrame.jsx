@@ -8,6 +8,8 @@ export default function MemeFrame(props)
         >
             <img
                 src={props.item.randomImage} />
+            <h3 className="meme-caption top">{props.item.topText}</h3>
+            <h3 className="meme-caption bottom">{props.item.bottomText}</h3>
         </div>
     )
 }
